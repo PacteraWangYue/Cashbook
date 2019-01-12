@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		892BCCAA21D608EA000170EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCCA921D608EA000170EE /* AppDelegate.swift */; };
+		892BCCAC21D608EA000170EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCCAB21D608EA000170EE /* ViewController.swift */; };
+		892BCCAF21D608EA000170EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892BCCAD21D608EA000170EE /* Main.storyboard */; };
+		892BCCB121D608EC000170EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892BCCB021D608EC000170EE /* Assets.xcassets */; };
+		892BCCB421D608EC000170EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892BCCB221D608EC000170EE /* LaunchScreen.storyboard */; };
+		892BCCBC21D60D23000170EE /* AddNewExpenditure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCCBB21D60D23000170EE /* AddNewExpenditure.swift */; };
+		892BCCBF21D61B90000170EE /* AddNewExpenditureButtomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCCBE21D61B90000170EE /* AddNewExpenditureButtomView.swift */; };
+		892BCCC321D74D7A000170EE /* TypeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCCC221D74D7A000170EE /* TypeScrollView.swift */; };
+		892BCCDB21DC851E000170EE /* AddNewExpenditureTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCCDA21DC851E000170EE /* AddNewExpenditureTopView.swift */; };
+		892BCD0621DEE5E8000170EE /* LabelTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892BCD0521DEE5E8000170EE /* LabelTools.swift */; };
+		8949E62521E1C2490088721B /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E62421E1C2490088721B /* TypeModel.swift */; };
+		8949E62721E1C2ED0088721B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E62621E1C2ED0088721B /* BaseModel.swift */; };
+		8949E62C21E2F4E10088721B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E62B21E2F4E10088721B /* SettingViewController.swift */; };
+		8949E63221E331D20088721B /* ExtensionTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E63121E331D20088721B /* ExtensionTools.swift */; };
+		8949E63421E332C00088721B /* EverydayBillListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E63321E332C00088721B /* EverydayBillListController.swift */; };
+		8949E63621E332E60088721B /* MonthBillListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E63521E332E60088721B /* MonthBillListController.swift */; };
+		8949E63921E33A0B0088721B /* EverydayBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E63821E33A0B0088721B /* EverydayBillCell.swift */; };
+		8949E63D21E33DBA0088721B /* EverydayBillListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E63C21E33DBA0088721B /* EverydayBillListModel.swift */; };
+		8949E64021E445390088721B /* TypeScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E63F21E445390088721B /* TypeScrollViewCell.swift */; };
+		8949E64721E48C2E0088721B /* BaseTabBarConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8949E64221E48C2E0088721B /* BaseTabBarConfig.plist */; };
+		8949E64821E48C2E0088721B /* BaseTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E64321E48C2E0088721B /* BaseTabBarItem.swift */; };
+		8949E64921E48C2E0088721B /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E64421E48C2E0088721B /* BaseNavigationViewController.swift */; };
+		8949E64A21E48C2E0088721B /* BaseTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E64521E48C2E0088721B /* BaseTabBarView.swift */; };
+		8949E64B21E48C2E0088721B /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E64621E48C2E0088721B /* BaseTabBarViewController.swift */; };
+		8949E64D21E48FE50088721B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E64C21E48FE50088721B /* MenuViewController.swift */; };
+		8949E66F21E585220088721B /* EverydayBillCellSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E66E21E585220088721B /* EverydayBillCellSectionHeaderView.swift */; };
+		8949E67221E749FC0088721B /* MonthSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E67121E749FC0088721B /* MonthSectionHeaderView.swift */; };
+		8949E67421E74A290088721B /* MonthBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E67321E74A290088721B /* MonthBillCell.swift */; };
+		8949E67621E74EB10088721B /* MonthBillListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949E67521E74EB10088721B /* MonthBillListModel.swift */; };
+		89DC8B1821E074F60047BD66 /* AddNewExpenditurePickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC8B1721E074F60047BD66 /* AddNewExpenditurePickerViews.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		892BCCA621D608EA000170EE /* Cashbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		892BCCA921D608EA000170EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		892BCCAB21D608EA000170EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		892BCCAE21D608EA000170EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		892BCCB021D608EC000170EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		892BCCB321D608EC000170EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		892BCCB521D608EC000170EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		892BCCBB21D60D23000170EE /* AddNewExpenditure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewExpenditure.swift; sourceTree = "<group>"; };
+		892BCCBE21D61B90000170EE /* AddNewExpenditureButtomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewExpenditureButtomView.swift; sourceTree = "<group>"; };
+		892BCCC221D74D7A000170EE /* TypeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeScrollView.swift; sourceTree = "<group>"; };
+		892BCCDA21DC851E000170EE /* AddNewExpenditureTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewExpenditureTopView.swift; sourceTree = "<group>"; };
+		892BCD0521DEE5E8000170EE /* LabelTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTools.swift; sourceTree = "<group>"; };
+		8949E62421E1C2490088721B /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
+		8949E62621E1C2ED0088721B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		8949E62B21E2F4E10088721B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		8949E63121E331D20088721B /* ExtensionTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTools.swift; sourceTree = "<group>"; };
+		8949E63321E332C00088721B /* EverydayBillListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayBillListController.swift; sourceTree = "<group>"; };
+		8949E63521E332E60088721B /* MonthBillListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBillListController.swift; sourceTree = "<group>"; };
+		8949E63821E33A0B0088721B /* EverydayBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayBillCell.swift; sourceTree = "<group>"; };
+		8949E63C21E33DBA0088721B /* EverydayBillListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayBillListModel.swift; sourceTree = "<group>"; };
+		8949E63F21E445390088721B /* TypeScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeScrollViewCell.swift; sourceTree = "<group>"; };
+		8949E64221E48C2E0088721B /* BaseTabBarConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BaseTabBarConfig.plist; sourceTree = "<group>"; };
+		8949E64321E48C2E0088721B /* BaseTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarItem.swift; sourceTree = "<group>"; };
+		8949E64421E48C2E0088721B /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		8949E64521E48C2E0088721B /* BaseTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarView.swift; sourceTree = "<group>"; };
+		8949E64621E48C2E0088721B /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		8949E64C21E48FE50088721B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8949E66E21E585220088721B /* EverydayBillCellSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayBillCellSectionHeaderView.swift; sourceTree = "<group>"; };
+		8949E67121E749FC0088721B /* MonthSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionHeaderView.swift; sourceTree = "<group>"; };
+		8949E67321E74A290088721B /* MonthBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBillCell.swift; sourceTree = "<group>"; };
+		8949E67521E74EB10088721B /* MonthBillListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBillListModel.swift; sourceTree = "<group>"; };
+		89DC8B1721E074F60047BD66 /* AddNewExpenditurePickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewExpenditurePickerViews.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		892BCCA321D608EA000170EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		892BCC9D21D608EA000170EE = {
+			isa = PBXGroup;
+			children = (
+				892BCCA821D608EA000170EE /* Cashbook */,
+				892BCCA721D608EA000170EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		892BCCA721D608EA000170EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				892BCCA621D608EA000170EE /* Cashbook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		892BCCA821D608EA000170EE /* Cashbook */ = {
+			isa = PBXGroup;
+			children = (
+				8949E64121E48C2E0088721B /* BaseTabBar */,
+				8949E62A21E2F4C80088721B /* Controller */,
+				8949E62321E1C2080088721B /* Model */,
+				892BCD0421DEE5D5000170EE /* Tools */,
+				892BCCBD21D60D28000170EE /* View */,
+				892BCCA921D608EA000170EE /* AppDelegate.swift */,
+				892BCCAD21D608EA000170EE /* Main.storyboard */,
+				892BCCB021D608EC000170EE /* Assets.xcassets */,
+				892BCCB221D608EC000170EE /* LaunchScreen.storyboard */,
+				892BCCB521D608EC000170EE /* Info.plist */,
+			);
+			path = Cashbook;
+			sourceTree = "<group>";
+		};
+		892BCCBD21D60D28000170EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8949E67021E749C70088721B /* MonthBillListView */,
+				8949E63721E3340D0088721B /* EverydayBillListView */,
+				8949E63021E331480088721B /* AddNewExpenditureView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		892BCD0421DEE5D5000170EE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				892BCD0521DEE5E8000170EE /* LabelTools.swift */,
+				8949E63121E331D20088721B /* ExtensionTools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		8949E62321E1C2080088721B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8949E62421E1C2490088721B /* TypeModel.swift */,
+				8949E62621E1C2ED0088721B /* BaseModel.swift */,
+				8949E63C21E33DBA0088721B /* EverydayBillListModel.swift */,
+				8949E67521E74EB10088721B /* MonthBillListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8949E62A21E2F4C80088721B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8949E62B21E2F4E10088721B /* SettingViewController.swift */,
+				892BCCAB21D608EA000170EE /* ViewController.swift */,
+				8949E63321E332C00088721B /* EverydayBillListController.swift */,
+				8949E63521E332E60088721B /* MonthBillListController.swift */,
+				8949E64C21E48FE50088721B /* MenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8949E63021E331480088721B /* AddNewExpenditureView */ = {
+			isa = PBXGroup;
+			children = (
+				892BCCBB21D60D23000170EE /* AddNewExpenditure.swift */,
+				892BCCBE21D61B90000170EE /* AddNewExpenditureButtomView.swift */,
+				892BCCDA21DC851E000170EE /* AddNewExpenditureTopView.swift */,
+				892BCCC221D74D7A000170EE /* TypeScrollView.swift */,
+				8949E63F21E445390088721B /* TypeScrollViewCell.swift */,
+				89DC8B1721E074F60047BD66 /* AddNewExpenditurePickerViews.swift */,
+			);
+			path = AddNewExpenditureView;
+			sourceTree = "<group>";
+		};
+		8949E63721E3340D0088721B /* EverydayBillListView */ = {
+			isa = PBXGroup;
+			children = (
+				8949E63821E33A0B0088721B /* EverydayBillCell.swift */,
+				8949E66E21E585220088721B /* EverydayBillCellSectionHeaderView.swift */,
+			);
+			path = EverydayBillListView;
+			sourceTree = "<group>";
+		};
+		8949E64121E48C2E0088721B /* BaseTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8949E64221E48C2E0088721B /* BaseTabBarConfig.plist */,
+				8949E64321E48C2E0088721B /* BaseTabBarItem.swift */,
+				8949E64421E48C2E0088721B /* BaseNavigationViewController.swift */,
+				8949E64521E48C2E0088721B /* BaseTabBarView.swift */,
+				8949E64621E48C2E0088721B /* BaseTabBarViewController.swift */,
+			);
+			path = BaseTabBar;
+			sourceTree = "<group>";
+		};
+		8949E67021E749C70088721B /* MonthBillListView */ = {
+			isa = PBXGroup;
+			children = (
+				8949E67121E749FC0088721B /* MonthSectionHeaderView.swift */,
+				8949E67321E74A290088721B /* MonthBillCell.swift */,
+			);
+			path = MonthBillListView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		892BCCA521D608EA000170EE /* Cashbook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 892BCCB821D608EC000170EE /* Build configuration list for PBXNativeTarget "Cashbook" */;
+			buildPhases = (
+				892BCCA221D608EA000170EE /* Sources */,
+				892BCCA321D608EA000170EE /* Frameworks */,
+				892BCCA421D608EA000170EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cashbook;
+			productName = Cashbook;
+			productReference = 892BCCA621D608EA000170EE /* Cashbook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		892BCC9E21D608EA000170EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "王越";
+				TargetAttributes = {
+					892BCCA521D608EA000170EE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 892BCCA121D608EA000170EE /* Build configuration list for PBXProject "Cashbook" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 892BCC9D21D608EA000170EE;
+			productRefGroup = 892BCCA721D608EA000170EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				892BCCA521D608EA000170EE /* Cashbook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		892BCCA421D608EA000170EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				892BCCB421D608EC000170EE /* LaunchScreen.storyboard in Resources */,
+				8949E64721E48C2E0088721B /* BaseTabBarConfig.plist in Resources */,
+				892BCCB121D608EC000170EE /* Assets.xcassets in Resources */,
+				892BCCAF21D608EA000170EE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		892BCCA221D608EA000170EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				892BCD0621DEE5E8000170EE /* LabelTools.swift in Sources */,
+				8949E62C21E2F4E10088721B /* SettingViewController.swift in Sources */,
+				892BCCAC21D608EA000170EE /* ViewController.swift in Sources */,
+				8949E64021E445390088721B /* TypeScrollViewCell.swift in Sources */,
+				8949E63421E332C00088721B /* EverydayBillListController.swift in Sources */,
+				8949E63921E33A0B0088721B /* EverydayBillCell.swift in Sources */,
+				8949E63221E331D20088721B /* ExtensionTools.swift in Sources */,
+				8949E62521E1C2490088721B /* TypeModel.swift in Sources */,
+				8949E63D21E33DBA0088721B /* EverydayBillListModel.swift in Sources */,
+				8949E64821E48C2E0088721B /* BaseTabBarItem.swift in Sources */,
+				8949E66F21E585220088721B /* EverydayBillCellSectionHeaderView.swift in Sources */,
+				8949E67621E74EB10088721B /* MonthBillListModel.swift in Sources */,
+				892BCCDB21DC851E000170EE /* AddNewExpenditureTopView.swift in Sources */,
+				8949E62721E1C2ED0088721B /* BaseModel.swift in Sources */,
+				892BCCC321D74D7A000170EE /* TypeScrollView.swift in Sources */,
+				8949E67221E749FC0088721B /* MonthSectionHeaderView.swift in Sources */,
+				8949E64A21E48C2E0088721B /* BaseTabBarView.swift in Sources */,
+				8949E64B21E48C2E0088721B /* BaseTabBarViewController.swift in Sources */,
+				8949E64D21E48FE50088721B /* MenuViewController.swift in Sources */,
+				8949E63621E332E60088721B /* MonthBillListController.swift in Sources */,
+				8949E64921E48C2E0088721B /* BaseNavigationViewController.swift in Sources */,
+				892BCCBC21D60D23000170EE /* AddNewExpenditure.swift in Sources */,
+				89DC8B1821E074F60047BD66 /* AddNewExpenditurePickerViews.swift in Sources */,
+				892BCCBF21D61B90000170EE /* AddNewExpenditureButtomView.swift in Sources */,
+				892BCCAA21D608EA000170EE /* AppDelegate.swift in Sources */,
+				8949E67421E74A290088721B /* MonthBillCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		892BCCAD21D608EA000170EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				892BCCAE21D608EA000170EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		892BCCB221D608EC000170EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				892BCCB321D608EC000170EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		892BCCB621D608EC000170EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		892BCCB721D608EC000170EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		892BCCB921D608EC000170EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NSHN4ARSTR;
+				INFOPLIST_FILE = Cashbook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cashbook12345;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		892BCCBA21D608EC000170EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NSHN4ARSTR;
+				INFOPLIST_FILE = Cashbook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cashbook12345;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		892BCCA121D608EA000170EE /* Build configuration list for PBXProject "Cashbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				892BCCB621D608EC000170EE /* Debug */,
+				892BCCB721D608EC000170EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		892BCCB821D608EC000170EE /* Build configuration list for PBXNativeTarget "Cashbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				892BCCB921D608EC000170EE /* Debug */,
+				892BCCBA21D608EC000170EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 892BCC9E21D608EA000170EE /* Project object */;
+}
