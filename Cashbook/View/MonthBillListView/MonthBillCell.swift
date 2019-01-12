@@ -47,6 +47,7 @@ class MonthBillCell: UITableViewCell {
 
     func setupPriceLabel(){
         //test
+        //test2
     }
     
     override func layoutSubviews() {
