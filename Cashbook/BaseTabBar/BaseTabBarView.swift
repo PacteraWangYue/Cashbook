@@ -34,7 +34,6 @@ class BaseTabBarView: UIView {
             //添加事件点击处理
             itemView.tag = i
             itemView.addTarget(self, action:#selector(self.didItemClick(item:))  , for: UIControl.Event.touchUpInside)
-            
             //默认点击第一个,即首页
             if i == 0 {
                 self .didItemClick(item: itemView)
@@ -48,9 +47,13 @@ class BaseTabBarView: UIView {
     }
     
     
-    //点击单个标签视图，通过currentSelectState的属性观察器更新标签的显示
-    //并且通过代理方法切换标签控制器的当前视图控制器
+    /// 点击单个标签视图，通过currentSelectState的属性观察器更新标签的显示
+    /// 并且通过代理方法切换标签控制器的当前视图控制器
     @objc func didItemClick(item:BaseTabBarItem){
+        /// 执行代理方法
+        self.delegate?.didChooseItem(itemIndex: item.tag)
+        /// 如果z是自定义的话就return
+        if item.isCustom { return }
         for i in 0..<itemArray.count{
             let tempItem = itemArray[i]
             if i == item.tag{
@@ -59,16 +62,14 @@ class BaseTabBarView: UIView {
                 tempItem.currentSelectState = false
             }
         }
-        //执行代理方法
-        self.delegate?.didChooseItem(itemIndex: item.tag)
     }
     
+    /// 超出部分也可以被点击
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
         for i in 0..<itemArray.count {
 
             let item = itemArray[i]
-//            let tempoint = item.convert(point, to: self)
             let w = self.frame.size.width/CGFloat(itemArray.count)
             if Int(point.x)/Int(w) == i {
                 let newpoint = CGPoint(x: point.x-w*CGFloat(i), y: point.y)

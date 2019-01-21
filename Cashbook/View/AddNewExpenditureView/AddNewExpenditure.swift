@@ -25,6 +25,7 @@ class AddNewExpenditure: UIView {
         setupBackView()
         self.addSubview(backView)
         self.backgroundColor = UIColor.lightGray
+//        self.backgroundColor = UIColor.white
         self.addSubview(bottomView)
         bottomView.frame = HideBottomViewFrame
         bottomView.TopView.showPicker = {
@@ -54,10 +55,6 @@ class AddNewExpenditure: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        HideView()
-//    }
-    
     func setupBackView(){
         backView.backgroundColor = UIColor.clear
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(back))
@@ -68,7 +65,7 @@ class AddNewExpenditure: UIView {
     func ShowView(){
         UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
             self.bottomView.frame = self.ShowBottomViewFrame
-            self.alpha = 0.9
+            self.alpha = 0.97
         }, completion: nil)
     }
     func HideView(){
@@ -81,14 +78,14 @@ class AddNewExpenditure: UIView {
     func ShowPickerView(){
         UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
             self.bottomView.frame = self.ShowPickerViewFrame
-            self.alpha = 0.9
+            self.alpha = 0.97
         }, completion: nil)
     }
     
     func HidePickerView(){
         UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
             self.bottomView.frame = self.ShowBottomViewFrame
-            self.alpha = 0.9
+            self.alpha = 0.97
         }, completion: nil)
     }
     

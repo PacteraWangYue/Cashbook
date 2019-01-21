@@ -88,3 +88,95 @@ extension UIView {
         drawBorder(rect: rect, color: borderColor)
     }
 }
+extension UIView {
+    
+    /// x
+    public var x: CGFloat {
+        get {
+            return self.frame.origin.x
+        }
+        set {
+            var rect = self.frame
+            rect.origin.x = newValue
+            self.frame = rect
+        }
+    }
+    
+    /// y
+    public var y: CGFloat {
+        get {
+            return self.frame.origin.y
+        }
+        set {
+            var rect = self.frame
+            rect.origin.y = newValue
+            self.frame = rect
+        }
+    }
+    
+    /// width
+    public var width: CGFloat {
+        get {
+            return self.frame.size.width
+        }
+        set {
+            var rect = self.frame
+            rect.size.width = newValue
+            self.frame = rect
+        }
+    }
+    
+    /// height
+    public var height: CGFloat {
+        get {
+            return self.frame.size.height
+        }
+        set {
+            var rect = self.frame
+            rect.size.height = newValue
+            self.frame = rect
+        }
+    }
+    
+    /// top
+    public var top: CGFloat {
+        get {
+            return self.frame.origin.y
+        }
+    }
+    
+    /// left
+    public var left: CGFloat {
+        get {
+            return self.frame.origin.x
+        }
+    }
+    
+    /// right
+    public var right: CGFloat {
+        get {
+            return self.frame.origin.x + self.frame.size.width
+        }
+    }
+    
+    /// bottom
+    public var bottom: CGFloat {
+        get {
+            return self.frame.origin.y + self.frame.size.height
+        }
+    }
+    
+    /// centerX
+    public var centerX: CGFloat {
+        get {
+            return self.frame.origin.x + self.frame.size.width/2
+        }
+    }
+    
+    /// centerY
+    public var centerY: CGFloat {
+        get {
+            return self.frame.origin.y + self.frame.size.height/2
+        }
+    }
+}

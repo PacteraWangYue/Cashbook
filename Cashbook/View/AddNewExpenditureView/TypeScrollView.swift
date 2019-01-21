@@ -32,7 +32,6 @@ class TypeScrollView: UIScrollView {
         }
     }
     var views:[TypeScrollViewCell] = [TypeScrollViewCell]()
-//    var buttons:[UIButton] = [UIButton]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

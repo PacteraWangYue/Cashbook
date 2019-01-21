@@ -46,3 +46,22 @@ class TypeModel: NSObject {
         return typemodels
     }
 }
+class TypeModels: NSObject {
+    var tableData:[TypeModel]?
+    var title:String?
+    static func getTypeModels()->[TypeModels]{
+        var models = [TypeModels]()
+        for i in 0..<2{
+            let model = TypeModels()
+            model.title = "\(i)"
+            model.tableData = TypeModel.getTypeModels()
+            models.append(model)
+        }
+        return models
+    }
+}
+
+class testModel:BaseModel{
+    var array:Any?
+    var title:String?
+}

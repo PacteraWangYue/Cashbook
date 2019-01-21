@@ -13,6 +13,7 @@ class BaseTabBarItem: UIControl {
     var itemDic:Dictionary<String, String>
     let imgView: UIImageView
     let titleLabel: UILabel
+    var isCustom = false
     
     //属性观察器
     var currentSelectState = false {
@@ -36,7 +37,9 @@ class BaseTabBarItem: UIControl {
         var imgTop:CGFloat = 3
         var imgWidth:CGFloat = 25
         //中间的按钮的布局参数做特殊处理
-        if itemDic["Center"] == "true"{
+        if itemDic["Custom"] == "true" {
+            self.isCustom = true
+            /// 设置自定义控件大小
             imgTop = -20
             imgWidth = 50
         }

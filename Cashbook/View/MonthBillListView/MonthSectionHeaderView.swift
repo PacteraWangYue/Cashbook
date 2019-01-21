@@ -27,7 +27,7 @@ class MonthSectionHeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.backgroundColor = UIColor.randomColor
+        self.backgroundColor = UIColor.white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,9 +35,9 @@ class MonthSectionHeaderView: UIView {
     }
     
     override func layoutSubviews() {
-        titleLabel.frame.size = CGSize(width: 30, height: 20)
+        titleLabel.frame.size = CGSize(width: 40, height: 20)
         titleLabel.center = CGPoint(x: 30, y: self.center.y)
-        countLabel.frame = CGRect(x: 50, y: titleLabel.center.y-5, width: 30, height: 15)
+        countLabel.frame = CGRect(x: titleLabel.frame.maxX + 5, y: titleLabel.center.y-5, width: 30, height: 15)
         bottomLine.frame = CGRect(x: 15, y: self.frame.height-4, width: self.frame.width - 30, height: 4)
         
         let priceLabelWidth = LabelTools.shared.getNormalStrW(str: "100000000", strFont: 20, h: 25)

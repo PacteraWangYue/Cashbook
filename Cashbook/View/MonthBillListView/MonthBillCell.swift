@@ -13,12 +13,14 @@ class MonthBillCell: UITableViewCell {
     let imageview = UIImageView()
     let titleLabel = UILabel()
     let priceLabel = UILabel()
+    let bottomLineView = UIView()
     
     var data:MonthBillListCellModel?{
         didSet{
             setupImageView()
             setupTitleLabel()
             setupPriceLabel()
+            setupBottomLineView()
         }
     }
     
@@ -29,8 +31,6 @@ class MonthBillCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setupImageView(){
@@ -46,17 +46,23 @@ class MonthBillCell: UITableViewCell {
     }
 
     func setupPriceLabel(){
-        //test
-        //test2
+        self.addSubview(priceLabel)
+        priceLabel.text = "\(data?.price)"
+        priceLabel.font = UIFont.systemFont(ofSize: 10)
+        priceLabel.textAlignment = .right
+    }
+    
+    func setupBottomLineView(){
+        self.addSubview(bottomLineView)
+        bottomLineView.backgroundColor = UIColor.lightGray
     }
     
     override func layoutSubviews() {
-        imageview.frame.size = CGSize(width: 4, height: 4)
-        imageview.center = CGPoint(x: 17, y: self.center.y)
-        
-        let titleLabelWidth = LabelTools.shared.getNormalStrW(str: (data?.title)!, strFont: 15, h: 20)
-//        titleLabel.frame.size = CGSize(width: 20, height: 10)
-//        titleLabel.center = CGPoint(x: 35, y: self.center.y)
-        titleLabel.frame = CGRect(x: 25, y: self.center.y-10, width: titleLabelWidth, height: 20)
+        imageview.frame = CGRect(x: 15, y: 20, width: 4, height: 4)
+        let titleLabelWidth = LabelTools.shared.getNormalStrW(str: (data?.title)!, strFont: 12, h: 20)
+        titleLabel.frame = CGRect(x: 25, y: 12, width: titleLabelWidth, height: 20)
+        let priceLabelWidth = LabelTools.shared.getNormalStrW(str: "\(data?.price)", strFont: 12, h: 20)
+        priceLabel.frame = CGRect(x: self.frame.width - priceLabelWidth - 15, y: 12, width: priceLabelWidth, height: 20)
+        bottomLineView.frame = CGRect(x: 15, y: self.frame.height - 1, width: self.frame.width - 30, height: 1)
     }
 }

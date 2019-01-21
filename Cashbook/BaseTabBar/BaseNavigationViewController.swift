@@ -14,7 +14,7 @@ class BaseNavigationViewController: UINavigationController {
         super.viewDidLoad()
         self.interactivePopGestureRecognizer?.delegate = (self as UIGestureRecognizerDelegate)
         //设置导航栏的样式
-        self.navigationBar.isTranslucent = true
+        self.navigationBar.isTranslucent = false
         self.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
         self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font:UIFont.systemFont(ofSize: 18)]
     }
