@@ -39,16 +39,38 @@ class AddNewExpenditureTopView: UIView {
     
     var showPicker:showPickerView?
     
-    let incomeScrollView = TypeScrollView.init()
-    let expendScrollView = TypeScrollView.init()
+    let typeScrollView = TypeScrollView.init()
     var hideScrollViewFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     var showScrollViewFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     let opts = UIView.AnimationOptions.curveEaseIn
     
-    let incomeDic:Dictionary<String,UIColor> = ["工资":UIColor.randomColor,"奖金":UIColor.randomColor,"投资":UIColor.randomColor]
-    let expendData:Dictionary<String,UIColor> = ["食物":UIColor.randomColor,"衣物":UIColor.randomColor,"教育":UIColor.randomColor,"交通":UIColor.randomColor,"医疗":UIColor.randomColor,"娱乐":UIColor.randomColor,"住房":UIColor.randomColor,"社交":UIColor.randomColor]
-    
+//    let data:[TypeModel] = {
+//        var models = [TypeModel]()
+//        let incomeDic = UserDefaults.standard.dictionary(forKey: "income")
+//        let expendDic = UserDefaults.standard.dictionary(forKey: "expend")
+//        models = [TypeModel.init(dict: incomeDic!),TypeModel.init(dict: expendDic!)]
+//        return models
+//    }()
+//        = TypeModel.getTypeModels()
+    var data:[TypeModel]? = TypeModel.getTypeModels(){
+        didSet{
+            if self.switchButton.isOn {
+                let incomeModel = data![0]
+                typeScrollView.data = incomeModel.getTypeCellModels()
+                let incomeCellModel = TypeCellModel.init(dict: data![0].array![0])
+                typeButton.setTitle(incomeCellModel.title, for: UIControl.State.normal)
+                typeButton.backgroundColor = UIColor.ColorHex(incomeCellModel.color!)
+            }
+            else{
+                let expendModel = data![1]
+                typeScrollView.data = expendModel.getTypeCellModels()
+                let expendCellModel = TypeCellModel.init(dict: data![1].array![0])
+                typeButton.setTitle(expendCellModel.title, for: UIControl.State.normal)
+                typeButton.backgroundColor = UIColor.ColorHex(expendCellModel.color!)
+            }
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInput()
@@ -84,25 +106,24 @@ class AddNewExpenditureTopView: UIView {
         typeLabel.font = UIFont.systemFont(ofSize: labelFont)
         typeButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         typeButton.layer.cornerRadius = 4
+        typeButton.addTarget(self, action: #selector(typeClick), for: UIControl.Event.touchUpInside)
         if self.switchButton.isOn {
-            typeButton.setTitle("工资", for: UIControl.State.normal)
-            typeButton.addTarget(self, action: #selector(ExpendClick), for: UIControl.Event.touchUpInside)
-            typeButton.backgroundColor = UIColor.green
+            let incomeCellModel = TypeCellModel.init(dict: data![0].array![0])
+            typeButton.setTitle(incomeCellModel.title, for: UIControl.State.normal)
+            typeButton.backgroundColor = UIColor.ColorHex(incomeCellModel.color!)
         }
         else{
-            typeButton.setTitle("食物", for: UIControl.State.normal)
-            typeButton.addTarget(self, action: #selector(Incomeclick), for: UIControl.Event.touchUpInside)
-            typeButton.backgroundColor = UIColor.red
+            let expendCellModel = TypeCellModel.init(dict: data![1].array![0])
+            typeButton.setTitle(expendCellModel.title, for: UIControl.State.normal)
+            typeButton.backgroundColor = UIColor.ColorHex(expendCellModel.color!)
         }
-        setupIncomeScrollView()
-        /////
+        setupTypeScrollView()
     }
     func setupDetailView(){
         self.addSubview(detailView)
         detailView.addSubview(detailLabel)
         detailView.addSubview(detailTextField)
         detailLabel.font = UIFont.systemFont(ofSize: labelFont)
-//        detailView.backgroundColor = UIColor.randomColor
         detailTextField.placeholder = "具体描述"
         detailTextField.setValue(UIFont.systemFont(ofSize: 13), forKeyPath: "_placeholderLabel.font")
         detailLabel.text = "标签"
@@ -122,16 +143,20 @@ class AddNewExpenditureTopView: UIView {
         timeDetailLabel.addGestureRecognizer(tap)
     }
     
-    func setupIncomeScrollView(){
-        self.typeView.addSubview(incomeScrollView)
-        incomeScrollView.backgroundColor = UIColor.lightGray
+    func setupTypeScrollView(){
+        self.typeView.addSubview(typeScrollView)
         if self.switchButton.isOn{
-            incomeScrollView.data = TypeModel.getTypeModels()
+//            let incomeModel = TypeModel.init(dict: UserDefaults.standard.dictionary(forKey: "income")!)
+//            typeScrollView.data = incomeModel.getTypeCellModels()
+            let incomeModel = data![0]
+            typeScrollView.data = incomeModel.getTypeCellModels()
         }
         else{
-            incomeScrollView.data = TypeModel.getTypeModels2()
+//            let expendModel = TypeModel.init(dict: UserDefaults.standard.dictionary(forKey: "expend")!)
+            let expendModel = data![1]
+            typeScrollView.data = expendModel.getTypeCellModels()
         }
-        incomeScrollView.getRes = {
+        typeScrollView.getRes = {
             (array) in
             self.typeButton.setTitle(array[0] as? String, for: UIControl.State.normal)
             self.typeButton.backgroundColor = array[1] as? UIColor
@@ -146,10 +171,10 @@ class AddNewExpenditureTopView: UIView {
 //        }
     }
     
-    func setupExpendScrollView(){
-        self.typeView.addSubview(expendScrollView)
-        expendScrollView.data = TypeModel.getTypeModels()
-    }
+//    func setupExpendScrollView(){
+//        self.typeView.addSubview(expendScrollView)
+//        expendScrollView.data = TypeModel.getTypeModels()
+//    }
     
     @objc func tapClick(){
         if showPicker != nil{
@@ -157,41 +182,40 @@ class AddNewExpenditureTopView: UIView {
         }
     }
     
-    @objc func Incomeclick(){
+    @objc func typeClick(){
         print("tag:"+"\(typeButton.tag)")
-        incomeScrollView.frame = self.hideScrollViewFrame
+        typeScrollView.frame = self.hideScrollViewFrame
         ShowScrollView()
-    }
-    
-    @objc func ExpendClick(){
-        expendScrollView.isHidden = false
         
     }
+    
     @objc func SwitchButtonClick(){
         HideScrollView()
         if self.switchButton.isOn {
-            typeButton.setTitle("工资", for: UIControl.State.normal)
-            typeButton.addTarget(self, action: #selector(ExpendClick), for: UIControl.Event.touchUpInside)
-            typeButton.backgroundColor = UIColor.green
-            incomeScrollView.data = TypeModel.getTypeModels()
+            let incomeModel = data![0]
+            typeScrollView.data = incomeModel.getTypeCellModels()
+            let incomeCellModel = TypeCellModel.init(dict: data![0].array![0])
+            typeButton.setTitle(incomeCellModel.title, for: UIControl.State.normal)
+            typeButton.backgroundColor = UIColor.ColorHex(incomeCellModel.color!)
         }
         else{
-            typeButton.setTitle("食物", for: UIControl.State.normal)
-            typeButton.addTarget(self, action: #selector(Incomeclick), for: UIControl.Event.touchUpInside)
-            typeButton.backgroundColor = UIColor.red
-            incomeScrollView.data = TypeModel.getTypeModels2()
+            let expendModel = data![1]
+            typeScrollView.data = expendModel.getTypeCellModels()
+            let expendCellModel = TypeCellModel.init(dict: data![1].array![0])
+            typeButton.setTitle(expendCellModel.title, for: UIControl.State.normal)
+            typeButton.backgroundColor = UIColor.ColorHex(expendCellModel.color!)
         }
     }
     
     func ShowScrollView(){
-        self.incomeScrollView.frame = self.hideScrollViewFrame
+        self.typeScrollView.frame = self.hideScrollViewFrame
         UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
             var contentX = self.typeButton.tag * Int(self.typeView.frame.width) * 3 / 20
-            if self.incomeScrollView.contentSize.width - CGFloat(contentX) < self.incomeScrollView.frame.width{
-                contentX = Int(self.incomeScrollView.contentSize.width - self.incomeScrollView.frame.width)
+            if self.typeScrollView.contentSize.width - CGFloat(contentX) < self.typeScrollView.frame.width{
+                contentX = Int(self.typeScrollView.contentSize.width - self.typeScrollView.frame.width)
             }
-            self.incomeScrollView.frame = self.showScrollViewFrame
-            self.incomeScrollView.contentOffset = CGPoint(x:contentX , y: 0)
+            self.typeScrollView.frame = self.showScrollViewFrame
+            self.typeScrollView.contentOffset = CGPoint(x:contentX , y: 0)
             //x: CGFloat(i) * self.frame.width * 3 / 20, y: 0
 //            self.incomeScrollView.contentOffset = CGPoint(x: CGFloat(self.typeButton.tag) * 3 / 20, y: 0)
         }, completion: nil)
@@ -199,7 +223,7 @@ class AddNewExpenditureTopView: UIView {
     
     func HideScrollView(){
         UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
-            self.incomeScrollView.frame = self.hideScrollViewFrame
+            self.typeScrollView.frame = self.hideScrollViewFrame
         }, completion: nil)
     }
     
@@ -218,7 +242,7 @@ class AddNewExpenditureTopView: UIView {
         switchButton.center = CGPoint(x: self.input.frame.width - 37 , y: self.input.center.y )
         
         typeLabel.frame = CGRect(x: 10, y: 0, width: typeLabelWidth, height: self.typeView.frame.height)
-        typeButton.frame = CGRect(x: self.typeView.frame.width - tool.getNormalStrW(str: "食物", strFont: 20, h: self.typeView.frame.height / 2) - 17, y: self.typeView.frame.height / 6, width: tool.getNormalStrW(str: "食物", strFont: 20, h: self.typeView.frame.height * 2/3), height: self.typeView.frame.height * 2/3)
+        typeButton.frame = CGRect(x: self.typeView.frame.width - tool.getNormalStrW(str:data![0].title!, strFont: 20, h: self.typeView.frame.height / 2) - 17, y: self.typeView.frame.height / 6, width: tool.getNormalStrW(str: data![0].title!, strFont: 20, h: self.typeView.frame.height * 2/3), height: self.typeView.frame.height * 2/3)
         //hideScrollViewFrame = CGRect(x: typeView.frame.maxX, y: typeButton.frame.minY, width: typeView.frame.width, height: typeButton.frame.height)
         //showScrollViewFrame = CGRect(x: typeView.frame.minX, y: typeButton.frame.minY, width: typeView.frame.width, height: typeButton.frame.height)
         

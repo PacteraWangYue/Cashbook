@@ -33,7 +33,6 @@ class AddNewExpenditureButtomView: UIView {
         TopView.backgroundColor = UIColor.white
         TopView.layer.cornerRadius = 7.0
         TopView.layer.masksToBounds = true//切除覆盖在view上的子view的圆角
-        
     }
     
     func setupAddButton(){

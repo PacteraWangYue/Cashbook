@@ -69,10 +69,15 @@ class AddNewExpenditure: UIView {
         }, completion: nil)
     }
     func HideView(){
-        UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
             self.bottomView.frame = self.HideBottomViewFrame
+            self.bottomView.TopView.HideScrollView()
+            self.bottomView.TopView.switchButton.isOn = false
+            self.bottomView.TopView.inputTextField.text = ""
+            self.bottomView.TopView.detailTextField.text = ""
             self.alpha = 0
         }, completion: nil)
+        
     }
     
     func ShowPickerView(){
@@ -83,7 +88,7 @@ class AddNewExpenditure: UIView {
     }
     
     func HidePickerView(){
-        UIView.animate(withDuration: 0.3, delay: 0, options: opts, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
             self.bottomView.frame = self.ShowBottomViewFrame
             self.alpha = 0.97
         }, completion: nil)

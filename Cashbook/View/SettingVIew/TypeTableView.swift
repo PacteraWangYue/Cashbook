@@ -9,8 +9,11 @@
 import UIKit
 
 class TypeTableView: UITableView {
-
-    var data:[TypeModel]?{
+    
+    var num:Int?
+    var returnDic:((_ dics:[Dictionary<String,Any>],_ num:Int)->())?
+    
+    var data:[TypeCellModel]?{
         didSet{
             self.setEditing(true, animated: true)//允许可以编辑
         }
@@ -70,6 +73,19 @@ extension TypeTableView:UITableViewDataSource,UITableViewDelegate{
             else{
                 self.data?.insert(value, at: newIndexPath.row)
             }
+            var dic = [Dictionary<String,Any>]()
+            for data in self.data!{
+//                print(data.title)
+                let res = TypeModel.reflectToDict(model: data)
+                dic.append(res)
+            }
+            print(dic)
+            print("")
+            
+            if returnDic != nil{
+                returnDic!(dic, self.num!)
+            }
         }
+        
     }
 }

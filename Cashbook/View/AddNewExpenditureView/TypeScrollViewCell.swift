@@ -11,7 +11,7 @@ import UIKit
 typealias getButton = (Array<Any>)->()
 class TypeScrollViewCell: UIView {
     
-    var model:TypeModel?{
+    var model:TypeCellModel?{
         didSet{
             setupButton()
         }
@@ -34,8 +34,10 @@ class TypeScrollViewCell: UIView {
     
     func setupButton(){
         button.setTitle(model?.title, for: UIControl.State.normal)
-        button.backgroundColor = model?.color
+        button.backgroundColor = UIColor.ColorHex((model?.color)!)
         button.addTarget(self, action: #selector(buttonClick(_:)), for: UIControl.Event.touchUpInside)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        button.layer.cornerRadius = 4
     }
     
     @objc func buttonClick(_ sender:UIButton){
@@ -44,7 +46,7 @@ class TypeScrollViewCell: UIView {
     
     override func layoutSubviews() {
         backgroundView.frame = self.bounds
-        button.frame.size = CGSize(width: self.frame.width * 9/10, height: self.frame.height * 3/5)
+        button.frame.size = CGSize(width: self.frame.width * 9/10, height: self.frame.height * 2/3)
         button.center = self.backgroundView.center
     }
 

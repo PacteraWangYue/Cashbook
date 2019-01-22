@@ -10,13 +10,31 @@ import UIKit
 
 class TypeController: UIViewController {
 
-    var models:[TypeModels]?{
+//    var models:[TypeModels]?{
+//        didSet{
+//            var titles = [String]()
+//            var tableviews = [[TypeModel]]()
+//            for model in models!{
+//                titles.append(model.title!)
+//                tableviews.append(model.tableData!)
+//            }
+//            self.topView.models = titles
+//            self.bottomView.data = tableviews
+//        }
+//    }
+    var models:[TypeModel]?{
         didSet{
             var titles = [String]()
-            var tableviews = [[TypeModel]]()
+            var tableviews = [[TypeCellModel]]()
             for model in models!{
                 titles.append(model.title!)
-                tableviews.append(model.tableData!)
+                var typetableviewmodel = [TypeCellModel]()
+                for i in 0..<(model.array?.count)!{
+                    let res = model.array![i]
+                    let typecellmodel = TypeCellModel.init(dict: res)
+                    typetableviewmodel.append(typecellmodel)
+                }
+                tableviews.append(typetableviewmodel)
             }
             self.topView.models = titles
             self.bottomView.data = tableviews
@@ -34,11 +52,39 @@ class TypeController: UIViewController {
             (changePage) in
             self.topView.currentNum = Int(changePage)
         }
+        bottomview.returnRes = {
+            (dic, num) in
+            
+//            var dic = [Dictionary<String,Any>]()
+//            for i in models!{
+//                let res = TypeModel.reflectToDict(model: i)
+//                dic.append(res)
+//            }
+//            print(dic)
+//            dic[0].updateValue(["1":"2"], forKey: "array")
+//            //            dic[0]["array"] =
+//            print(dic)
+//            print(dic[0]["array"])
+            var str = ""
+            switch num{
+            case 0:str = "income"
+            case 1:str = "expend"
+            default :str = ""
+            }
+            var incomeDic = UserDefaults.standard.dictionary(forKey: str)
+            incomeDic?.updateValue(dic, forKey: "array")
+            UserDefaults.standard.set(incomeDic, forKey: str)
+        }
         return bottomview
     }()
     
     lazy var topView:TopScrollView = {
         let view = TopScrollView()
+        view.returnCount = {
+            (count) in
+            print(count)
+            self.bottomView.currentNum = count
+        }
         return view
     }()
     
@@ -49,12 +95,11 @@ class TypeController: UIViewController {
         self.view.addSubview(bottomView)
         self.view.addSubview(topView)
         
-        let incomeDic = UserDefaults.standard.dictionary(forKey: "incomeDic")
-        let expendDic = UserDefaults.standard.dictionary(forKey: "expendDic")
-        let incomeModel = testModel.init(dict: incomeDic!)
-        let expendModel = testModel.init(dict: expendDic!)
-        
-        models = TypeModels.getTypeModels()
+        let incomeDic = UserDefaults.standard.dictionary(forKey: "income")
+        let expendDic = UserDefaults.standard.dictionary(forKey: "expend")
+        let incomeModel = TypeModel.init(dict: incomeDic!)
+        let expendModel = TypeModel.init(dict: expendDic!)
+        models = [incomeModel,expendModel]
         topView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.01) {
             self.bottomView.frame = CGRect(x: 0, y: self.topView.frame.maxY, width: self.view.frame.width, height: self.view.frame.height - 49 - self.topView.frame.height)

@@ -7,7 +7,8 @@
 //
 
 import Foundation
-class BaseModel: NSObject {
+class BaseModel: NSObject,Codable {
+    
     init(dict: [String: Any]) {
         super.init()
         setValuesForKeys(dict)

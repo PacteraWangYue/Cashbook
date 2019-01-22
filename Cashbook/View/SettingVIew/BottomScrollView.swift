@@ -11,8 +11,9 @@ import UIKit
 class BottomScrollView: UIScrollView {
     
     var returnPage:((CGFloat)->())?
-    
-    var data:[[TypeModel]]?{
+    var returnRes:(([Dictionary<String,Any>],Int)->())?
+    let opts = UIView.AnimationOptions.curveEaseIn
+    var data:[[TypeCellModel]]?{
         didSet{
             for view in subviews{
                 view.removeFromSuperview()
@@ -21,15 +22,23 @@ class BottomScrollView: UIScrollView {
             for i in 0..<(data?.count)!{
                 let tableview = TypeTableView()
                 tableview.data = data![i]
+                tableview.num = i
+                tableview.returnDic = {
+                    (dic,num) in
+                    if self.returnRes != nil{
+                        self.returnRes!(dic,num)
+                    }
+                }
                 tableviews.append(tableview)
                 self.addSubview(tableview)
             }
-//            currentNum = 0
         }
     }
-    
-//    var currentNum:Int? = 0
-    
+    var currentNum:Int? = 0{
+        didSet{
+            self.contentOffset.x = CGFloat(currentNum!) * UIScreen.main.bounds.width
+        }
+    }
     var tableviews = [TypeTableView]()
     
     override init(frame: CGRect) {

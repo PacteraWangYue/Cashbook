@@ -45,6 +45,7 @@
 		8949E67821EB94560088721B /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8949E67721EB94550088721B /* FMDB.framework */; };
 		8949E67921EB94560088721B /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8949E67721EB94550088721B /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89DC8B1821E074F60047BD66 /* AddNewExpenditurePickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC8B1721E074F60047BD66 /* AddNewExpenditurePickerViews.swift */; };
+		89F2272D21F6FB53006C463C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F2272C21F6FB53006C463C /* BaseViewController.swift */; };
 		89F8B5D721EF11E100E5618C /* BottomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5D621EF11E100E5618C /* BottomScrollView.swift */; };
 		89F8B5D921EF11EA00E5618C /* TopScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5D821EF11EA00E5618C /* TopScrollView.swift */; };
 		89F8B5DB21EF1DED00E5618C /* TypeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5DA21EF1DEC00E5618C /* TypeTableView.swift */; };
@@ -52,6 +53,7 @@
 		89F8B5DF21F0698800E5618C /* BudgetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5DE21F0698800E5618C /* BudgetListCell.swift */; };
 		89F8B5E121F0773A00E5618C /* BudgetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5E021F0773A00E5618C /* BudgetTableView.swift */; };
 		89F8B5E321F1627200E5618C /* BudgetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5E221F1627200E5618C /* BudgetHeaderView.swift */; };
+		89F8B5E521F5592900E5618C /* JsonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F8B5E421F5592800E5618C /* JsonTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,6 +110,7 @@
 		8949E67521E74EB10088721B /* MonthBillListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBillListModel.swift; sourceTree = "<group>"; };
 		8949E67721EB94550088721B /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = Carthage/Build/iOS/FMDB.framework; sourceTree = "<group>"; };
 		89DC8B1721E074F60047BD66 /* AddNewExpenditurePickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewExpenditurePickerViews.swift; sourceTree = "<group>"; };
+		89F2272C21F6FB53006C463C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		89F8B5D621EF11E100E5618C /* BottomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomScrollView.swift; sourceTree = "<group>"; };
 		89F8B5D821EF11EA00E5618C /* TopScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScrollView.swift; sourceTree = "<group>"; };
 		89F8B5DA21EF1DEC00E5618C /* TypeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableView.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		89F8B5DE21F0698800E5618C /* BudgetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListCell.swift; sourceTree = "<group>"; };
 		89F8B5E021F0773A00E5618C /* BudgetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableView.swift; sourceTree = "<group>"; };
 		89F8B5E221F1627200E5618C /* BudgetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetHeaderView.swift; sourceTree = "<group>"; };
+		89F8B5E421F5592800E5618C /* JsonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,7 @@
 			children = (
 				892BCD0521DEE5E8000170EE /* LabelTools.swift */,
 				8949E63121E331D20088721B /* ExtensionTools.swift */,
+				89F8B5E421F5592800E5618C /* JsonTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				8949E63521E332E60088721B /* MonthBillListController.swift */,
 				8949E64C21E48FE50088721B /* MenuViewController.swift */,
 				891010B721EDBFF6002FBF76 /* BudgetListController.swift */,
+				89F2272C21F6FB53006C463C /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				8949E64021E445390088721B /* TypeScrollViewCell.swift in Sources */,
 				891010A421EC313D002FBF76 /* MonthBillTopView.swift in Sources */,
 				8949E63421E332C00088721B /* EverydayBillListController.swift in Sources */,
+				89F2272D21F6FB53006C463C /* BaseViewController.swift in Sources */,
 				8949E63921E33A0B0088721B /* EverydayBillCell.swift in Sources */,
 				89F8B5D721EF11E100E5618C /* BottomScrollView.swift in Sources */,
 				8949E63221E331D20088721B /* ExtensionTools.swift in Sources */,
@@ -379,6 +386,7 @@
 				891010A621EC378F002FBF76 /* MonthCell.swift in Sources */,
 				8949E63621E332E60088721B /* MonthBillListController.swift in Sources */,
 				89F8B5DF21F0698800E5618C /* BudgetListCell.swift in Sources */,
+				89F8B5E521F5592900E5618C /* JsonTools.swift in Sources */,
 				892BCCBC21D60D23000170EE /* AddNewExpenditure.swift in Sources */,
 				89F8B5D921EF11EA00E5618C /* TopScrollView.swift in Sources */,
 				89DC8B1821E074F60047BD66 /* AddNewExpenditurePickerViews.swift in Sources */,

@@ -12,7 +12,7 @@ typealias returnRes = (Array<Any>)->()
 class TypeScrollView: UIScrollView {
     
     var getRes :returnRes?
-    var data:[TypeModel]?{
+    var data:[TypeCellModel]?{
         didSet{
             for view in subviews{
                 view.removeFromSuperview()
@@ -35,7 +35,6 @@ class TypeScrollView: UIScrollView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.isPagingEnabled = true
         self.isScrollEnabled = true
         self.backgroundColor = UIColor.white
         self.bounces = false
@@ -49,7 +48,12 @@ class TypeScrollView: UIScrollView {
         if views.count != 0{
             for i in 0..<views.count{
                 views[i].frame = CGRect(x: CGFloat(i) * self.frame.width * 3 / 20, y: 0, width: self.frame.width * 3 / 20, height: self.frame.height)
-                self.contentSize = CGSize(width: (Int(self.frame.width) * 3 / 20) * views.count, height: 0)
+                if self.frame.width * 3 / 20 * CGFloat(views.count) > self.frame.width{
+                    self.contentSize = CGSize(width: (Int(self.frame.width) * 3 / 20) * views.count, height: 0)
+                }
+                else{
+                    self.contentSize = self.frame.size
+                }
             }
         }
     }

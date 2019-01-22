@@ -24,33 +24,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let mainTabBarVC = ViewController();
         let mainTabBarVC = MenuViewController()
         self.window?.rootViewController = mainTabBarVC;
-
         if UserDefaults.standard.dictionary(forKey: "expend") == nil{
             let expendDic:Dictionary<String,Any> =
                 [ "title":"支出",
                   "array":
                     [
-                        ["title":"食物", "color":UIColor.randomColor,"comment":"备注：快餐，饮料"],
-                        ["title":"衣物", "color":UIColor.randomColor,"comment":"备注：衣服，鞋子，饰品"],
-                        ["title":"社交", "color":UIColor.randomColor,"comment":"备注：聚餐，礼物"],
-                        ["title":"娱乐", "color":UIColor.randomColor,"comment":"备注：旅游，电影"],
-                        ["title":"医疗", "color":UIColor.randomColor,"comment":"备注：药品，保健品"],
-                        ["title":"交通", "color":UIColor.randomColor,"comment":"备注：邮费，公交费"],
-                        ["title":"住房", "color":UIColor.randomColor,"comment":"备注：房租，水电"],
-                        ["title":"教育", "color":UIColor.randomColor,"comment":"备注：书籍，学费，在线教育"]
+                        ["title":"食物", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：快餐，饮料"],
+                        ["title":"衣物", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：衣服，鞋子，饰品"],
+                        ["title":"社交", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：聚餐，礼物"],
+                        ["title":"娱乐", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：旅游，电影"],
+                        ["title":"医疗", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：药品，保健品"],
+                        ["title":"交通", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：邮费，公交费"],
+                        ["title":"住房", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：房租，水电"],
+                        ["title":"教育", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：书籍，学费，在线教育"]
                     ]
                 ]
             UserDefaults.standard.set(expendDic, forKey: "expend")
         }
-        
+    
         if UserDefaults.standard.dictionary(forKey: "income") == nil{
             let incomeDic:Dictionary<String,Any> =
                 [ "title":"收入",
                   "array":
                     [
-                        ["title":"工资", "color":UIColor.randomColor,"comment":"备注：工资"],
-                        ["title":"奖金", "color":UIColor.randomColor,"comment":"备注：奖金"],
-                        ["title":"工资", "color":UIColor.randomColor,"comment":"备注：工资"],
+                        ["title":"工资", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：工资"],
+                        ["title":"奖金", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：奖金"],
+                        ["title":"投资", "color":UIColor.randomColor.htmlRGBColor,"comment":"备注：股票l，理财"]
                     ]
             ]
             UserDefaults.standard.set(incomeDic, forKey: "income")
@@ -84,3 +83,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIColor {
+    class func color(withData data:Data) -> UIColor {
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor
+    }
+    
+    func encode() -> Data {
+        return NSKeyedArchiver.archivedData(withRootObject: self)
+    }
+}
